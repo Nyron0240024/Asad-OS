@@ -4435,3 +4435,189 @@ option {
     min-height: 65px;
   }
 }
+/* =========================================
+   ASAD OS — MOBILE RESPONSIVE FIX
+   ========================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.app,
+.main,
+.content,
+.page-section,
+#otherPage,
+#modulePanel {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.analytics-page,
+.analytics-grid,
+.analytics-card,
+.analytics-chart,
+.analytics-dual,
+.analytics-dual section {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.analytics-chart {
+  width: 100%;
+  overflow: hidden;
+}
+
+.analytics-chart-legend {
+  flex-wrap: wrap;
+}
+
+.analytics-bars {
+  width: 100%;
+  min-width: 0;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.analytics-bar-group {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.analytics-bar-pair {
+  gap: 2px;
+}
+
+.analytics-bar {
+  width: 42%;
+  max-width: 17px;
+}
+
+.analytics-bar-group > span {
+  height: 18px;
+  font-size: 9px;
+  transform: none;
+  white-space: nowrap;
+}
+
+.analytics-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.analytics-table {
+  min-width: 520px;
+}
+
+.analytics-kpi,
+.analytics-work-grid > div {
+  min-width: 0;
+}
+
+.analytics-kpi strong,
+.analytics-work-grid strong {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 750px) {
+  .content {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 12px;
+  }
+
+  .module-panel {
+    padding: 14px;
+  }
+
+  .analytics-page {
+    gap: 14px;
+  }
+
+  .analytics-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analytics-currency {
+    width: 100%;
+  }
+
+  .analytics-currency button {
+    flex: 1;
+  }
+
+  .analytics-periods {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .analytics-periods button {
+    min-width: 0;
+    padding: 9px 5px;
+  }
+
+  .analytics-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .analytics-kpi {
+    padding: 12px;
+  }
+
+  .analytics-kpi strong {
+    font-size: 15px;
+  }
+
+  .analytics-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .analytics-card {
+    padding: 13px;
+  }
+
+  .analytics-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .analytics-dual {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .analytics-kpi {
+    padding: 10px;
+  }
+
+  .analytics-kpi strong {
+    font-size: 13px;
+  }
+
+  .analytics-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* iPhone: prevent automatic zoom on input focus */
+@media (max-width: 750px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
