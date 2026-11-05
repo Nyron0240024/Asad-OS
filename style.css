@@ -4624,3 +4624,50 @@ body {
 .analytics-hidden-label {
   visibility: hidden;
 }
+/* ASAD OS — FIX DARK THEME: GOALS & HABITS */
+
+body.dark-theme .goals-stat-card,
+body.dark-theme .goal-card,
+body.dark-theme .habit-card {
+  background: #172832 !important;
+  border: 1px solid rgba(65, 190, 145, 0.25) !important;
+  color: #edf7f4 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .goals-stat-card span,
+body.dark-theme .goal-card span,
+body.dark-theme .habit-card span,
+body.dark-theme .habit-card small,
+body.dark-theme .goal-card small {
+  color: #a8bdc1 !important;
+}
+
+body.dark-theme .goals-stat-card strong,
+body.dark-theme .goal-card strong,
+body.dark-theme .habit-card strong,
+body.dark-theme .goal-card h4,
+body.dark-theme .habit-card h4 {
+  color: #edf7f4 !important;
+}
+
+body.dark-theme .habit-day span {
+  background: #263943 !important;
+  color: #b9cbd0 !important;
+}
+
+body.dark-theme .habit-day span.done {
+  background: rgba(35, 190, 130, 0.2) !important;
+  color: #42d99b !important;
+}
+
+body.dark-theme .habit-check-button {
+  background: rgba(120, 86, 232, 0.16) !important;
+  color: #a88cff !important;
+  border-color: rgba(120, 86, 232, 0.4) !important;
+}
+
+body.dark-theme .habit-check-button.checked {
+  background: rgba(35, 190, 130, 0.15) !important;
+  color: #42d99b !important;
+}
