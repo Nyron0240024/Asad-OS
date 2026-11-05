@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="./icon.png">
+
+<link rel="apple-touch-icon" href="./icon.png">
+
+<link rel="manifest" href="./manifest.json">
+
+<meta name="theme-color" content="#080b18">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7856e8">
+  <meta name="description" content="ASAD OS — Personal Life Management System">
+
+  <title>ASAD OS</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <div class="brand-logo">A</div>
+
+      <div class="brand-text">
+        <h2>ASAD<span> OS</span></h2>
+        <small>PERSONAL SYSTEM</small>
+      </div>
+
+      <button class="close-sidebar" id="closeSidebar">×</button>
+    </div>
+
+    <div class="sidebar-label" data-i18n="workspace">WORKSPACE</div>
+
+    <nav class="navigation" id="navigation">
+
+      <button class="nav-item active" data-page="dashboard">
+        <span class="nav-icon">▦</span>
+        <span data-i18n="dashboard">Главная</span>
+      </button>
+
+      <button class="nav-item" data-page="finance">
+        <span class="nav-icon">◈</span>
+        <span data-i18n="finance">Финансы</span>
+      </button>
+
+      <button class="nav-item" data-page="driver">
+        <span class="nav-icon">▣</span>
+        <span data-i18n="driver">Такси</span>
+      </button>
+
+      <button class="nav-item" data-page="garage">
+        <span class="nav-icon">⚙</span>
+        <span data-i18n="garage">Автомобиль</span>
+      </button>
+
+      <button class="nav-item" data-page="goals">
+        <span class="nav-icon">◎</span>
+        <span data-i18n="goals">Цели и привычки</span>
+      </button>
+
+      <button class="nav-item" data-page="creator">
+        <span class="nav-icon">▷</span>
+        <span data-i18n="creator">Creator Studio</span>
+      </button>
+
+      <button class="nav-item" data-page="planner">
+        <span class="nav-icon">▤</span>
+        <span data-i18n="planner">Планировщик</span>
+      </button>
+
+      <button class="nav-item" data-page="analytics">
+        <span class="nav-icon">▥</span>
+        <span data-i18n="analytics">Аналитика</span>
+      </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <div class="sidebar-label" data-i18n="system">SYSTEM</div>
+
+      <button class="nav-item" data-page="settings">
+        <span class="nav-icon">⚙</span>
+        <span data-i18n="settings">Настройки</span>
+      </button>
+
+      <div class="profile-card">
+        <div class="avatar">A</div>
+
+        <div class="profile-info">
+          <strong>Asadbek</strong>
+          <small>Personal account</small>
+        </div>
+
+        <span class="online-dot"></span>
+      </div>
+
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button class="menu-button" id="menuButton">☰</button>
+
+        <div>
+          <div class="breadcrumb">
+            ASAD OS <span>/</span>
+            <span id="breadcrumbPage">Главная</span>
+          </div>
+
+          <h1 id="pageTitle">Главная</h1>
+        </div>
+
+      </div>
+
+      <div class="topbar-actions">
+        <button class="icon-button" id="languageButton">RU</button>
+        <button class="icon-button" id="currencyButton">BOTH</button>
+        <button class="icon-button" id="themeButton">☀</button>
+        <div class="top-avatar">A</div>
+      </div>
+
+    </header>
+
+    <div class="content">
+
+      <section id="dashboardPage" class="page-section">
+
+        <div class="welcome-section">
+
+          <div>
+            <p class="eyebrow">PERSONAL OVERVIEW</p>
+
+            <h2>
+              <span data-i18n="hello">Привет</span>, Asadbek ✦
+            </h2>
+
+            <p class="welcome-description"
+              data-i18n="welcomeDescription">
+              Управляй своей жизнью. Двигайся к своим целям.
+            </p>
+          </div>
+
+          <div class="date-card">
+            <span id="currentDay"></span>
+            <strong id="currentDate"></strong>
+          </div>
+
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span data-i18n="incomeToday">Доход сегодня</span>
+              <span class="stat-icon green">↗</span>
+            </div>
+
+            <h3 id="dashboardIncome">0</h3>
+            <p data-i18n="incomeHint">Доход за сегодняшний день</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span data-i18n="expensesToday">Расходы сегодня</span>
+              <span class="stat-icon pink">↘</span>
+            </div>
+
+            <h3 id="dashboardExpense">0</h3>
+            <p data-i18n="expensesHint">Расходы за сегодняшний день</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span data-i18n="tasksToday">Задачи сегодня</span>
+              <span class="stat-icon blue">✓</span>
+            </div>
+
+            <h3>0</h3>
+            <p data-i18n="tasksHint">Модуль появится позже</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-top">
+              <span data-i18n="goalsProgress">Мои цели</span>
+              <span class="stat-icon purple">◎</span>
+            </div>
+
+            <h3>0%</h3>
+            <p data-i18n="goalsHint">Модуль появится позже</p>
+          </div>
+
+        </div>
+
+        <div class="dashboard-grid">
+
+          <div class="panel">
+
+            <div class="panel-heading">
+              <div>
+                <h3 data-i18n="quickActions">Быстрые действия</h3>
+                <p data-i18n="quickDescription">Твои основные инструменты</p>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+
+              <button class="quick-action" data-goto="finance">
+                <span class="quick-icon purple">＋</span>
+                <span data-i18n="addIncome">Добавить операцию</span>
+              </button>
+
+              <button class="quick-action" data-goto="driver">
+                <span class="quick-icon blue">⌁</span>
+                <span data-i18n="addTrip">Записать смену</span>
+              </button>
+
+              <button class="quick-action" data-goto="planner">
+                <span class="quick-icon orange">✓</span>
+                <span data-i18n="addTask">Создать задачу</span>
+              </button>
+
+              <button class="quick-action" data-goto="garage">
+                <span class="quick-icon green">⚙</span>
+                <span data-i18n="carService">Обслуживание авто</span>
+              </button>
+
+            </div>
+          </div>
+
+          <div class="panel">
+
+            <div class="panel-heading">
+              <div>
+                <h3 data-i18n="recentActivity">Последняя активность</h3>
+                <p data-i18n="activityDescription">Твои последние операции</p>
+              </div>
+
+              <button class="text-button"
+                data-goto="finance"
+                data-i18n="viewAll">Все →</button>
+            </div>
+
+            <div id="dashboardActivity" class="dashboard-activity">
+
+              <div class="empty-state">
+                <div class="empty-icon">◷</div>
+                <strong data-i18n="noActivity">Пока нет активности</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="footer">
+          <span>ASAD OS © 2026</span>
+          <span data-i18n="footerText">Создано для продуктивной жизни.</span>
+        </div>
+
+      </section>
+
+      <section id="otherPage" class="page-section hidden">
+
+        <div class="module-header">
+
+          <div class="module-icon" id="moduleIcon">◈</div>
+
+          <div>
+            <p class="eyebrow">ASAD OS MODULE</p>
+            <h2 id="moduleTitle"></h2>
+            <p id="moduleDescription" class="welcome-description"></p>
+          </div>
+
+        </div>
+
+        <div class="panel module-panel" id="modulePanel"></div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div id="toastContainer" class="toast-container"></div>
+
+<!-- ВАЖЕН ПОРЯДОК ПОДКЛЮЧЕНИЯ -->
+
+<script src="database.js"></script>
+<script src="finance.js"></script>
+<script src="driver.js"></script>
+<script src="garage.js"></script>
+<script src="goals.js"></script>
+<script src="planner.js"></script>
+<script src="analytics.js"></script>
+<script src="creator.js"></script>
+<script src="dashboard.js"></script>
+<script src="settings.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

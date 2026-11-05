@@ -1,0 +1,19 @@
+{
+  "name": "ASAD OS",
+  "short_name": "ASAD OS",
+  "description": "Personal Finance and Driver Management",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080b18",
+  "theme_color": "#080b18",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
