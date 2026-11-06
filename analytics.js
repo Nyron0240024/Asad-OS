@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
 
@@ -330,99 +329,29 @@
   }
 
   function renderChart(items) {
-  if (state.currency === "BOTH") {
-    state.currency = "UZS";
-    const uzsChart = renderChart(items);
+    if (state.currency === "BOTH") {
+      state.currency = "UZS";
+      const uzsChart = renderChart(items);
 
-    state.currency = "USD";
-    const usdChart = renderChart(items);
+      state.currency = "USD";
+      const usdChart = renderChart(items);
 
-    state.currency = "BOTH";
+      state.currency = "BOTH";
 
-    return `
-      <div class="analytics-dual">
-        <section>
-          <h4>UZS</h4>
-          ${uzsChart}
-        </section>
-        <section>
-          <h4>USD</h4>
-          ${usdChart}
-        </section>
-      </div>
-    `;
-  }
+      return `
+        <div class="analytics-dual">
+          <section>
+            <h4>UZS</h4>
+            ${uzsChart}
+          </section>
+          <section>
+            <h4>USD</h4>
+            ${usdChart}
+          </section>
+        </div>
+      `;
+    }
 
-  const data = getChartData(items);
-
-  const values = data.map(item => {
-    const income = state.currency === "USD"
-      ? item.incomeUSD
-      : item.incomeUZS;
-
-    const expense = state.currency === "USD"
-      ? item.expenseUSD
-      : item.expenseUZS;
-
-    return { ...item, income, expense };
-  });
-
-  const max = Math.max(
-    1,
-    ...values.flatMap(item => [item.income, item.expense])
-  );
-
-  const isDaily = state.period === "7" || state.period === "30";
-
-  return `
-    <div class="analytics-chart">
-      <div class="analytics-chart-legend">
-        <span><i class="legend-income"></i>${t("income")}</span>
-        <span><i class="legend-expense"></i>${t("expenses")}</span>
-      </div>
-
-      <div class="analytics-bars">
-        ${values.map((item, index) => {
-          const incomeHeight = item.income / max * 100;
-          const expenseHeight = item.expense / max * 100;
-
-          const label = item.key.length === 7
-            ? new Date(
-                Number(item.key.slice(0, 4)),
-                Number(item.key.slice(5, 7)) - 1,
-                1
-              ).toLocaleDateString(
-                language() === "uz" ? "uz-UZ" : "ru-RU",
-                { month: "short" }
-              )
-            : formatDate(item.key);
-
-          // Показываем подписи через 5 дней на графике за 30 дней
-          const showLabel = !isDaily ||
-            state.period === "7" ||
-            index % 5 === 0 ||
-            index === values.length - 1;
-
-          return `
-            <div class="analytics-bar-group"
-              title="${escapeHTML(label)}">
-              <div class="analytics-bar-pair">
-                <div class="analytics-bar income-bar"
-                  style="height:${incomeHeight}%"></div>
-                <div class="analytics-bar expense-bar"
-                  style="height:${expenseHeight}%"></div>
-              </div>
-
-              <span class="${showLabel ? "" : "analytics-hidden-label"}">
-                ${showLabel ? escapeHTML(label) : ""}
-              </span>
-            </div>
-          `;
-        }).join("")}
-      </div>
-    </div>
-  `;
-}
     const data = getChartData(items);
 
     const values = data.map(item => {
@@ -442,6 +371,8 @@
       ...values.flatMap(item => [item.income, item.expense])
     );
 
+    const isDaily = state.period === "7" || state.period === "30";
+
     return `
       <div class="analytics-chart">
         <div class="analytics-chart-legend">
@@ -450,7 +381,7 @@
         </div>
 
         <div class="analytics-bars">
-          ${values.map(item => {
+          ${values.map((item, index) => {
             const incomeHeight = item.income / max * 100;
             const expenseHeight = item.expense / max * 100;
 
@@ -465,15 +396,25 @@
                 )
               : formatDate(item.key);
 
+            // Показываем подписи через 5 дней на графике за 30 дней
+            const showLabel = !isDaily ||
+              state.period === "7" ||
+              index % 5 === 0 ||
+              index === values.length - 1;
+
             return `
-              <div class="analytics-bar-group" title="${escapeHTML(label)}">
+              <div class="analytics-bar-group"
+                title="${escapeHTML(label)}">
                 <div class="analytics-bar-pair">
                   <div class="analytics-bar income-bar"
                     style="height:${incomeHeight}%"></div>
                   <div class="analytics-bar expense-bar"
                     style="height:${expenseHeight}%"></div>
                 </div>
-                <span>${escapeHTML(label)}</span>
+
+                <span class="${showLabel ? "" : "analytics-hidden-label"}">
+                  ${showLabel ? escapeHTML(label) : ""}
+                </span>
               </div>
             `;
           }).join("")}
@@ -484,27 +425,28 @@
 
   function renderCategories(items) {
     if (state.currency === "BOTH") {
-  state.currency = "UZS";
-  const uzsCategories = renderCategories(items);
+      state.currency = "UZS";
+      const uzsCategories = renderCategories(items);
 
-  state.currency = "USD";
-  const usdCategories = renderCategories(items);
+      state.currency = "USD";
+      const usdCategories = renderCategories(items);
 
-  state.currency = "BOTH";
+      state.currency = "BOTH";
 
-  return `
-    <div class="analytics-dual">
-      <section>
-        <h4>UZS</h4>
-        ${uzsCategories}
-      </section>
-      <section>
-        <h4>USD</h4>
-        ${usdCategories}
-      </section>
-    </div>
-  `;
-}
+      return `
+        <div class="analytics-dual">
+          <section>
+            <h4>UZS</h4>
+            ${uzsCategories}
+          </section>
+          <section>
+            <h4>USD</h4>
+            ${usdCategories}
+          </section>
+        </div>
+      `;
+    }
+
     const expenses = items.filter(item => item.type === "expense");
 
     const totals = {};
