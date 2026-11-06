@@ -4671,3 +4671,460 @@ body.dark-theme .habit-check-button.checked {
   background: rgba(35, 190, 130, 0.15) !important;
   color: #42d99b !important;
 }
+
+/* =====================================================
+   ASAD OS — UNIFIED LIGHT & DARK THEME
+   Final visual override
+===================================================== */
+
+:root {
+  color-scheme: light;
+
+  --accent: #159b68;
+  --accent-hover: #108457;
+  --accent-light: rgba(21, 155, 104, .10);
+
+  --background: #f4f7f5;
+  --sidebar: #ffffff;
+  --surface: #ffffff;
+  --surface-secondary: #f7faf8;
+
+  --text: #202c27;
+  --text-secondary: #788780;
+  --border: #e6ede9;
+
+  --card-bg: #ffffff;
+  --border-color: #e6ede9;
+  --text-primary: #202c27;
+  --card-secondary: #f7faf8;
+
+  --green: #159b68;
+  --pink: #df637b;
+  --blue: #548edb;
+  --orange: #d99b43;
+
+  --shadow: 0 5px 22px rgba(28, 65, 47, .045);
+
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 19px;
+  --radius-xl: 23px;
+}
+
+body {
+  background: var(--background) !important;
+  color: var(--text) !important;
+  transition: background .25s ease, color .25s ease;
+}
+
+/* DARK THEME */
+
+body.dark-theme {
+  color-scheme: dark;
+
+  --background: #0b1513;
+  --sidebar: #101e1a;
+  --surface: #14231e;
+  --surface-secondary: #192b24;
+
+  --text: #eaf5ee;
+  --text-secondary: #98ada2;
+  --border: #263a30;
+
+  --card-bg: #14231e;
+  --border-color: #263a30;
+  --text-primary: #eaf5ee;
+  --card-secondary: #192b24;
+
+  --accent: #42d99a;
+  --accent-hover: #2bc584;
+  --accent-light: rgba(66, 217, 154, .12);
+
+  --green: #42d99a;
+  --pink: #ff788e;
+  --blue: #68b5ed;
+  --orange: #f4bc61;
+
+  --shadow: 0 8px 28px rgba(0, 0, 0, .17);
+
+  background: #0b1513 !important;
+  color: #eaf5ee !important;
+}
+
+/* GENERAL SURFACES */
+
+.sidebar,
+.topbar {
+  background: var(--sidebar) !important;
+  border-color: var(--border) !important;
+}
+
+.main,
+.app {
+  background: transparent !important;
+  color: var(--text);
+}
+
+.panel,
+.stat-card,
+.finance-stat-card,
+.finance-filters,
+.finance-table-wrap,
+.finance-empty,
+.finance-backup,
+.driver-stat-card,
+.driver-metrics > div,
+.garage-stat-card,
+.garage-vehicle-card,
+.garage-reminder,
+.goals-stat-card,
+.goal-card,
+.habit-card,
+.planner-stat,
+.date-card {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* HEADINGS AND TEXT */
+
+body .topbar h1,
+body .welcome-section h2,
+body .panel-heading h3,
+body .module-header h2,
+body .stat-card h3,
+body .goals-stat-card strong,
+body .goal-card h3,
+body .habit-card h3 {
+  color: var(--text) !important;
+}
+
+body .breadcrumb,
+body .welcome-description,
+body .panel-heading p,
+body .stat-top,
+body .stat-card p,
+body .finance-toolbar p,
+body .settings-note,
+body .goals-stat-card span,
+body .goal-description,
+body .habit-stats small,
+body .habit-day small,
+body .garage-label,
+body .garage-reminder small,
+body .planner-header p {
+  color: var(--text-secondary) !important;
+}
+
+/* SIDEBAR */
+
+.nav-item {
+  color: var(--text-secondary) !important;
+  border-radius: 13px !important;
+}
+
+.nav-item:hover {
+  background: var(--surface-secondary) !important;
+  color: var(--text) !important;
+}
+
+.nav-item.active {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.brand-text h2 span {
+  color: var(--accent) !important;
+}
+
+/* BUTTONS */
+
+.icon-button,
+.finance-filter,
+.finance-row-actions button,
+.finance-cancel,
+.finance-backup-actions button,
+.finance-import-button,
+.goal-actions button,
+.setting-row select {
+  background: var(--surface-secondary) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+}
+
+button {
+  border-radius: 12px;
+}
+
+.finance-add-button,
+.finance-save,
+.planner-add-btn {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-radius: 13px !important;
+}
+
+body.dark-theme .finance-add-button,
+body.dark-theme .finance-save,
+body.dark-theme .planner-add-btn {
+  color: #062016 !important;
+}
+
+/* FORMS */
+
+input,
+select,
+textarea,
+.finance-field input,
+.finance-field select,
+.finance-filter-bottom input,
+.finance-filter-bottom select {
+  background: var(--surface-secondary) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: .75;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-light) !important;
+  outline: none !important;
+}
+
+option {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+/* TABLES */
+
+.finance-table th,
+.analytics-table th,
+.driver-table th,
+.garage-table th {
+  background: var(--surface-secondary) !important;
+  color: var(--text-secondary) !important;
+}
+
+.finance-table td,
+.analytics-table td,
+.driver-table td,
+.garage-table td {
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* GOALS AND HABITS */
+
+.goals-stat-card,
+.goal-card,
+.habit-card {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.goal-card-title h3,
+.habit-card-title h3,
+.habit-stats strong,
+.goal-progress-info {
+  color: var(--text) !important;
+}
+
+.habit-day span {
+  background: var(--surface-secondary) !important;
+  color: var(--text-secondary) !important;
+  border-radius: 9px !important;
+}
+
+.habit-day span.done {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+}
+
+.habit-check-button {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+  border-color: var(--border) !important;
+  border-radius: 12px !important;
+}
+
+.habit-check-button.checked {
+  background: rgba(21, 155, 104, .13) !important;
+  color: var(--green) !important;
+}
+
+/* PLANNER */
+
+.planner-page {
+  color: var(--text) !important;
+}
+
+.planner-stat {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.planner-language {
+  background: var(--surface-secondary) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* GARAGE */
+
+.garage-vehicle-card,
+.garage-stat-card,
+.garage-reminder {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* DASHBOARD */
+
+.welcome-section {
+  border-radius: var(--radius-xl) !important;
+}
+
+.date-card {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.quick-action {
+  background: var(--surface-secondary) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 15px !important;
+}
+
+/* ANALYTICS */
+
+.analytics-card,
+.analytics-kpi,
+.analytics-work-grid > div {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* MODALS AND TOASTS */
+
+.finance-form-modal,
+.toast {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+/* SOFTER DESIGN */
+
+.panel,
+.stat-card,
+.finance-stat-card,
+.driver-stat-card,
+.garage-stat-card,
+.goals-stat-card,
+.goal-card,
+.habit-card,
+.planner-stat {
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    transform .2s ease;
+}
+
+.panel:hover,
+.stat-card:hover,
+.goal-card:hover,
+.habit-card:hover {
+  border-color: var(--accent-light) !important;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border) !important;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent) !important;
+}
+
+/* REMOVE OLD HARD-CODED DARK BACKGROUNDS */
+
+body:not(.dark-theme) .sidebar,
+body:not(.dark-theme) .topbar {
+  background: var(--sidebar) !important;
+}
+
+body:not(.dark-theme) .welcome-section {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+body:not(.dark-theme) .welcome-section h2,
+body:not(.dark-theme) .welcome-section h2 span {
+  color: var(--text) !important;
+}
+
+body:not(.dark-theme) .quick-action,
+body:not(.dark-theme) .icon-button,
+body:not(.dark-theme) input,
+body:not(.dark-theme) select,
+body:not(.dark-theme) textarea {
+  color: var(--text) !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+  .sidebar {
+    background: var(--sidebar) !important;
+  }
+
+  .topbar {
+    background: var(--sidebar) !important;
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  .panel,
+  .goal-card,
+  .habit-card {
+    border-radius: 16px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
